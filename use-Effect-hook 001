@@ -1,0 +1,30 @@
+import React, { useEffect, useState } from "react";
+import { getGifs } from "./giphy";
+
+
+export default function App() {
+  const [gifs, setGifs] = useState([]);
+  const [query, setQuery] = useState("programming");
+
+  useEffect(() => {
+    
+    async function fetch() {
+      const gifs = await getGifs(querry);
+      setGifs(gifs);
+    }
+
+    fetch();
+  }, [query]); 
+
+  function changeQuery(event){
+    setQuery(event.target.value);
+  }
+    return (
+      <div>
+        <h1>Exercise 7</h1>
+        gifs.map((gif, index) => (
+          <video key={index} autoPlay loop src={gif} />
+        ))[];
+      </div>
+    );
+  }
